@@ -14,6 +14,14 @@ ReactDOM.render(
       <Route path="/" element={<App />}>
         <Route path="invoices" element={<Invoices />} />
         <Route path="expenses" element={<Expenses />} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: '2rem' }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
       </Route>
     </Routes>
   </BrowserRouter>,
