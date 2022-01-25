@@ -8,6 +8,7 @@ export default function Invoice() {
   return (
     <div>
       <h2>Invoice {params.invoiceId}</h2>
+      <h3>Total due: {invoice.amount}</h3>
       <p>
         {invoice.name}: {invoice.number}
       </p>
