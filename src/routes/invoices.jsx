@@ -1,6 +1,6 @@
-import { NavLink, Outlet, useSearchParams } from 'react-router-dom';
-import { setTokenSourceMapRange } from 'typescript/lib/tsserverlibrary';
+import { Outlet, useSearchParams } from 'react-router-dom';
 import { getInvoices } from '../data';
+import CustomNavLink from './CustomNavLink';
 
 export default function Invoices() {
   let invoices = getInvoices();
@@ -24,7 +24,7 @@ export default function Invoices() {
             return name.startsWith(filter.toLowerCase());
           })
           .map((invoice) => (
-            <NavLink
+            <CustomNavLink
               style={({ isActive }) => {
                 return {
                   display: 'block',
@@ -36,7 +36,7 @@ export default function Invoices() {
               key={invoice.number}
             >
               {invoice.name}
-            </NavLink>
+            </CustomNavLink>
           ))}
       </nav>
       <main style={{ padding: '1rem 0' }}>
